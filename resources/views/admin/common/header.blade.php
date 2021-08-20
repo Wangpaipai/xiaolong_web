@@ -31,6 +31,8 @@
     <link href="{{ asset('static/admin/css/style-responsive.css') }}" rel="stylesheet" />
 {{--    <link href="{{ asset('static/admin/css/xcharts.min.css') }}" rel=" stylesheet">--}}
     <link href="{{ asset('static/admin/css/jquery-ui-1.10.4.min.css') }}" rel="stylesheet">
+
+    <link href="{{ asset('static/admin/js/layui/css/layui.css') }}" rel="stylesheet" />
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 -->
     <!--[if lt IE 9]>
     <![endif]-->

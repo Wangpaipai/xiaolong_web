@@ -21,6 +21,7 @@
     <!-- Custom styles -->
     <link href="{{ asset('static/admin/css/style.css') }}" rel="stylesheet">
     <link href="{{ asset('static/admin/css/style-responsive.css') }}" rel="stylesheet" />
+    <link href="{{ asset('static/admin/js/layui/css/layui.css') }}" rel="stylesheet" />
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 -->
 <!--[if lt IE 9]>
@@ -50,10 +51,31 @@
 </div>
 </body>
 <script src="{{ asset('static/admin/js/jquery.js') }}"></script>
+<script src="{{ asset('static/admin/js/layui/layui.js') }}"></script>
 <script>
 $(function(){
     $("#login-btn").click(function() {
-        console.log($(".login-form").serialize())
+        requestData = $(".login-form").serialize()
+        $.ajax({
+          url: "{{ route('admin.login.store') }}",
+          data: requestData,
+          type: "post",
+          headers: {
+            "X-CSRF-TOKEN": "{{ csrf_token() }}"
+          },
+          success: function(data) {
+            if (data.status === 200) {
+              layer.msg(data.message, {icon: 1});
+              location.href = "{{ route('admin.home') }}"
+            } else {
+              layer.msg("登录失败", {icon: 2});
+            }
+
+          },
+          error: function(err) {
+            layer.msg(err.responseJSON.message, {icon: 2});
+          }
+        })
     })
 })
 </script>

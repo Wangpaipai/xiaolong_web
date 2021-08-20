@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,12 +14,23 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('admin.index');
+Route::get('/', [UserController::class, 'index'])->name('admin.login');
+
+Route::post('/login/store', [UserController::class, 'login'])->name('admin.login.store');
+
+Route::middleware(['auth_check'])->group(function() {
+
+    Route::get('/home', function () {
+        return view('admin.index');
+    })->name('admin.home');
+
+    Route::get('/dashboard', function () {
+        return view('admin.dashboard');
+    })->name('admin.dashboard');
+
+    Route::get('/logOut', [UserController::class, 'logOut'])->name('admin.logout');
+
+    Route::post('/register', [UserController::class, 'register'])->name('admin.register');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
 
-require __DIR__.'/auth.php';

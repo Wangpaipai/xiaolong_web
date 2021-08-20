@@ -22,7 +22,7 @@
                 <ul class="dropdown-menu extended logout">
                     <div class="log-arrow-up"></div>
                     <li>
-                        <a href="javascript:;"><i class="icon_key_alt"></i> 退出登录</a>
+                        <a href="{{ route('admin.logout') }}"><i class="arrow_carrot-2right_alt2"></i> 退出登录</a>
                     </li>
                 </ul>
             </li>
