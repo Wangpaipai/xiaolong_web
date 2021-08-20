@@ -6,14 +6,24 @@ use App\Http\Controllers\Admin\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Admin\Auth\RegisteredUserController;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\LoginRequest;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Redirector;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\ValidationException;
 
 class UserController extends Controller
 {
+    /**
+     * 登录页面
+     * Created by:Lxj
+     * Created at:2021/8/21 0:50
+     * @return Application|Factory|View|RedirectResponse|Redirector
+     */
     public function index() {
         if (Auth::check()) {
             return redirect('/admin/home');

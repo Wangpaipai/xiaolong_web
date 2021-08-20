@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\IndexController;
 use App\Http\Controllers\Admin\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,13 +21,9 @@ Route::post('/login/store', [UserController::class, 'login'])->name('admin.login
 
 Route::middleware(['auth_check'])->group(function() {
 
-    Route::get('/home', function () {
-        return view('admin.index');
-    })->name('admin.home');
+    Route::get('/home', [IndexController::class, 'index'])->name('admin.home');
 
-    Route::get('/dashboard', function () {
-        return view('admin.dashboard');
-    })->name('admin.dashboard');
+    Route::get('/dashboard', [IndexController::class, 'dashboard'])->name('admin.dashboard');
 
     Route::get('/logOut', [UserController::class, 'logOut'])->name('admin.logout');
 
