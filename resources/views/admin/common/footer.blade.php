@@ -14,7 +14,7 @@
 <!-- charts scripts -->
 <script src="{{ asset('static/admin/assets/jquery-knob/js/jquery.knob.js') }}"></script>
 <script src="{{ asset('static/admin/js/jquery.sparkline.js') }}" type="text/javascript"></script>
-<script src="{{ asset('static/admin/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.js') }}"></script>
+{{--<script src="{{ asset('static/admin/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.js') }}"></script>--}}
 <script src="{{ asset('static/admin/js/owl.carousel.js') }}" ></script>
 <!-- jQuery full calendar -->
 <<script src="{{ asset('static/admin/js/fullcalendar.min.js') }}"></script> <!-- Full Google Calendar - Calendar -->

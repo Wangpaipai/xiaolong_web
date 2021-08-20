@@ -1,5 +1,3 @@
-
-<!--sidebar start-->
 <aside>
     <div id="sidebar"  class="nav-collapse ">
         <!-- sidebar menu start-->
@@ -77,4 +75,3 @@
         <!-- sidebar menu end-->
     </div>
 </aside>
-<!--sidebar end-->

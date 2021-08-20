@@ -2,7 +2,6 @@
 
 <!-- container section start -->
 <section id="container" class="">
-
     @include('admin.common.top')
 
     @include('admin.common.menu')
