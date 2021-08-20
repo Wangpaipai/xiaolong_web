@@ -23,41 +23,38 @@
     <link href="{{ asset('static/admin/css/style-responsive.css') }}" rel="stylesheet" />
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 -->
-    <!--[if lt IE 9]>
+<!--[if lt IE 9]>
     <script src="{{ asset('static/admin/js/html5shiv.js') }}"></script>
     <script src="{{ asset('static/admin/js/respond.min.js') }}"></script>
     <![endif]-->
 </head>
 
-  <body class="login-img3-body">
+<body class="login-img3-body">
 
-    <div class="container">
+<div class="container">
 
-      <form class="login-form" action="#">
+    <form class="login-form" action="#">
         <div class="login-wrap">
             <p class="login-img"><i class="icon_lock_alt"></i></p>
             <div class="input-group">
-              <span class="input-group-addon"><i class="icon_profile"></i></span>
-              <input type="text" class="form-control" placeholder="帐号" autofocus>
+                <span class="input-group-addon"><i class="icon_profile"></i></span>
+                <input type="text" class="form-control" name="name" placeholder="帐号" autofocus>
             </div>
             <div class="input-group">
                 <span class="input-group-addon"><i class="icon_key_alt"></i></span>
-                <input type="password" class="form-control" placeholder="密码">
+                <input type="password" class="form-control" name="password" placeholder="密码">
             </div>
-            <button class="btn btn-primary btn-lg btn-block" id="login-btn" type="submit">登录</button>
+            <button class="btn btn-primary btn-lg btn-block" id="login-btn" type="button">登录</button>
         </div>
-      </form>
-
-    </div>
-
-
-  </body>
+    </form>
+</div>
+</body>
 <script src="{{ asset('static/admin/js/jquery.js') }}"></script>
 <script>
 $(function(){
-  $("#login-btn").click(function() {
-    console.log(123)
-  })
+    $("#login-btn").click(function() {
+        console.log($(".login-form").serialize())
+    })
 })
 </script>
 </html>
