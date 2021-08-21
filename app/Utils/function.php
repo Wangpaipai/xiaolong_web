@@ -34,3 +34,7 @@ function responsError($msg = '', $data = []): \Illuminate\Http\JsonResponse
     ];
     return response()->json($resData)->setEncodingOptions(JSON_UNESCAPED_UNICODE);
 }
+
+function utc2date($date) {
+    return date('Y-m-d H:i', strtotime($date));
+}

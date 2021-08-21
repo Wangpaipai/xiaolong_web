@@ -13,7 +13,7 @@
                         <ul class="sub">
                             @foreach($m['child'] as $childMenu)
                                 <li>
-                                    <a class="" href="javascript:;" data-href="{{ empty($childMenu['route.name']) ? '' : route($childMenu['route.name']) }}">
+                                    <a class="menuClick" href="javascript:;" data-href="{{ empty($childMenu['route_name']) ? '' : route($childMenu['route_name']) }}">
                                         <i class="{{ $childMenu['icon'] }}"></i>
                                         <span>{{ $childMenu['name'] }}</span>
                                     </a>
@@ -22,8 +22,8 @@
                         </ul>
                     </li>
                 @else
-                    <li class="active">
-                        <a class="" href="javascript:;" data-href="{{ empty($m['route.name']) ? '' : route($m['route.name']) }}">
+                    <li class="sub-menu">
+                        <a class="menuClick" href="javascript:;" data-href="{{ empty($m['route_name']) ? '' : route($m['route_name']) }}">
                             <i class="{{ $m['icon'] }}"></i>
                             <span>{{ $m['name'] }}</span>
                         </a>

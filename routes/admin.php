@@ -27,7 +27,15 @@ Route::middleware(['auth_check'])->group(function() {
 
     Route::get('/logOut', [UserController::class, 'logOut'])->name('admin.logout');
 
-    Route::post('/register', [UserController::class, 'register'])->name('admin.register');
+
+    Route::prefix('users')->group(function() {
+        Route::get('/index', [UserController::class, 'userList'])->name('admin.user.index');
+        Route::post('/delete', [UserController::class, 'userDelete'])->name('admin.user.delete');
+        Route::get('/detail', [UserController::class, 'userDetail'])->name('admin.user.detail');
+        Route::post('/edit', [UserController::class, 'userEdit'])->name('admin.user.edit');
+        Route::get('/create/create', [UserController::class, 'userCreate'])->name('admin.user.create');
+        Route::post('/register', [UserController::class, 'register'])->name('admin.register');
+    });
 });
 
 

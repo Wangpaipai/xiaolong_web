@@ -18,11 +18,23 @@
     #iframe {
       border: 0;
     }
+    .active-menu {
+      background: #00a0df;
+    }
 </style>
+
 <script>
 $(function() {
   h_h = $(".header").height()
   w_h = $("#sidebar").height()
   $("#iframe").height(w_h - h_h - 10)
+
+  $('.menuClick').click(function() {
+    $('.active-menu').removeClass('active-menu')
+    iframe_url = $(this).attr('data-href')
+    $('#iframe').attr("src", iframe_url)
+    $(this).addClass('active-menu')
+  })
 })
+
 </script>
