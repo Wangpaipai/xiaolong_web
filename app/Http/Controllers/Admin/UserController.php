@@ -92,6 +92,10 @@ class UserController extends Controller
     public function userDelete(Request $request) {
         $id = $request->get('id');
 
+        if ($id == 1) {
+            return responsError("不能删除主账户");
+        }
+
         if (User::where('id', '=', $id)->delete()) {
             return responsSuccess([], "删除成功");
         } else {
