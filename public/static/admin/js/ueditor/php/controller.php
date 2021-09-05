@@ -2,19 +2,19 @@
 
 /**
  * Ueditor 事件处理方法
- * 
+ *
  * @author   widuu <admin@widuu.com>
  * @document https://github.com/widuu/qiniu_ueditor_1.4.3
  */
 
 /**
  * 设置http://www.widuu.com允许跨域访问
- * header('Access-Control-Allow-Origin: http://www.baidu.com'); 
- * header('Access-Control-Allow-Headers: X-Requested-With,X_Requested_With'); 
+ * header('Access-Control-Allow-Origin: http://www.baidu.com');
+ * header('Access-Control-Allow-Headers: X-Requested-With,X_Requested_With');
  */
-
+error_reporting(0);
 date_default_timezone_set("Asia/chongqing");
-error_reporting(E_ERROR);
+//error_reporting(E_ERROR);
 header("Content-Type: text/html; charset=utf-8");
 
 define('DS', DIRECTORY_SEPARATOR);
@@ -43,7 +43,7 @@ spl_autoload_register(function($class){
 $config = require_once( UEDITOR_PATH.'config.php' );
 
 // 获取方法
-$action = !empty($_GET['action']) ? trim($_GET['action']) : '';
+$action = !empty(trim($_GET['action'])) ? trim($_GET['action']) : '';
 
 // 实例化处理方法
 $handle = new Channel($config);

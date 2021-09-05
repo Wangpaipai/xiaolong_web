@@ -76,7 +76,10 @@ $(function(){
         success: function(data) {
           if (data.status === 200) {
             layer.msg(data.message, {icon: 1});
-            location.href = document.referrer
+
+            setTimeout(function() {
+              location.href = document.referrer
+            }, 1000)
           } else {
             layer.msg("操作失败", {icon: 2});
           }

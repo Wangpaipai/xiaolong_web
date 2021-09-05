@@ -36,6 +36,12 @@ Route::middleware(['auth_check'])->group(function() {
         Route::get('/create/create', [UserController::class, 'userCreate'])->name('admin.user.create');
         Route::post('/register', [UserController::class, 'register'])->name('admin.register');
     });
+
+    Route::get('/system', [IndexController::class, 'systemView'])->name('admin.system.view');
+    Route::post('/system/udpate', [IndexController::class, 'updateSystem'])->name('admin.system.update');
+
+    Route::get('/about', [IndexController::class, 'about'])->name('admin.about');
+    Route::post('/about/update', [IndexController::class, 'updateAbout'])->name('admin.about.update');
 });
 
 

@@ -3,23 +3,6 @@ Ueditor七牛云存储版本
 
 >注意事项 老版本请查看 : [https://github.com/widuu/qiniu_ueditor_1.4.3/tree/v1.0.0](https://github.com/widuu/qiniu_ueditor_1.4.3/tree/v1.0.0)
 
-### 关于地址报错
-
-> 请修改 `php/config.json` 中的 `uploadQiniuUrl` 和 `ChunkUploadQiniuUrl` 参数，因为最近反馈地区错误报错比较多，举个简单的例子华南地区修改如下
-
-```
-"uploadQiniuUrl"     : "http://up-z2.qiniu.com/", /* 七牛上传地址 */
-"ChunkUploadQiniuUrl": "http://up-z2.qiniu.com", /* 分片上传创建的host地址 */
-```
-具体地区的上传URL请查看七牛官方存储区域，地址:[https://developer.qiniu.com/kodo/manual/1671/region-endpoint](https://developer.qiniu.com/kodo/manual/1671/region-endpoint)
-
-> 使用ssl协议时，请认真查看七牛官方的上传url地址，然后打开看是否报错，有人已经反馈ssl无法上传，其实是config.json配置中的URL问题。
-
-### BUG修复
-
- - 上传区域错误，现在可通过`uploadQiniuUrl`来更改区域 - 2018/3/30 
- - 图片列表多现实一个的错误 - 2018/3/30
-
 ### 新版本说明
 
 >注意：新版本不兼容老版本，网上整合教程现在最多的是老版本，如果查看的是网站教程请点击老版本地址来下载老版本
@@ -33,7 +16,6 @@ Ueditor七牛云存储版本
  - 通过七牛 `fetch` 功能来抓取远程图片
  - 新增上传模式，[直传|服务器上传]，服务器上传是通过上传到服务器的临时文件再上传到七牛
  - 大视频分片上传到七牛[2017/7/17]
- - `config.json` 中增加 `QiniuDriver.class.php` 中的域名配置参数
 
 #### 修复 
 
@@ -41,7 +23,6 @@ Ueditor七牛云存储版本
  - 使用 `fetch` 方法来抓取远程图片
  - 修复老版本在线管理限定的1000个文件列表
  - 列表分页通过七牛传输的 `marker` 来进行查找分页
- - 修复七牛 `fetch` 错误返回信息
 
 
 ### 配置

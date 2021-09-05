@@ -86,7 +86,7 @@ class QiniuDriver{
 		// 返回数据
 		$response = $this->request($url, 'POST', array('Authorization'=>"QBox $token"));
 		// 如果有错误信息
-		if( !empty($response['error']) ){
+		if( !empty($result['error']) ){
 			return array(
 				'state' => $result['error']
 			);
@@ -243,7 +243,7 @@ class QiniuDriver{
 			}else{
 				$save_name = pathinfo($field_name, PATHINFO_EXTENSION);
 			}
-			$file_name = $prefix . $format.'/'.time().mt_rand(0,215909581).'.'.$save_name;
+			$file_name = $prefix . $format.'/'.time().mt_rand(0,10).'.'.$save_name;
 		}else{
 			// 不是远程抓取
 			if( !$flag ){
@@ -354,11 +354,11 @@ class QiniuDriver{
 
 	private function getDirectReturnBody(){
 		//使用水印和非使用水印拼接方法
-		if( !$this->use_water ){
-			$url = trim($this->host , "/")."/$(key)";
+		if( !$this->user_water ){
+			$url = $this->host."/$(key)";
 		}else{
 			$water_image  = $this->SafeBase64Encode($this->water_url);
-			$url  = trim($this->host , "/")."/$(key)?watermark/1/image/{$water_image}";
+			$url  = $this->host."/$(key)?watermark/1/image/{$water_image}";
 			$url .= "/dissolve/{$this->dissolve}/gravity/{$this->gravity}/dx/{$this->dx}/dy/{$this->dy}";
 		}
 		
@@ -457,10 +457,7 @@ class QiniuDriver{
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 0);
 		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, $method);
-		// widuu
-		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
-		curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, FALSE);
-		// end wdiuu
+
         if ($method == 'PUT' || $method == 'POST') {
 			curl_setopt($ch, CURLOPT_POST, 1);
         } else {

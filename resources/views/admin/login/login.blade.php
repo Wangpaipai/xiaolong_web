@@ -66,7 +66,10 @@ $(function(){
           success: function(data) {
             if (data.status === 200) {
               layer.msg(data.message, {icon: 1});
-              location.href = "{{ route('admin.home') }}"
+
+              setTimeout(function() {
+                location.href = "{{ route('admin.home') }}"
+              }, 1000)
             } else {
               layer.msg("登录失败", {icon: 2});
             }
