@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\IndexController;
+use App\Http\Controllers\Admin\QiniuController;
 use App\Http\Controllers\Admin\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -42,6 +43,8 @@ Route::middleware(['auth_check'])->group(function() {
 
     Route::get('/about', [IndexController::class, 'about'])->name('admin.about');
     Route::post('/about/update', [IndexController::class, 'updateAbout'])->name('admin.about.update');
+
+    Route::get('/qiniu/token', [QiniuController::class, 'getToken'])->name('admin.qiniu.token');
 });
 
 
