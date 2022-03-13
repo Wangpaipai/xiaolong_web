@@ -14,7 +14,7 @@
                                 <div class="form-group ">
                                     <label for="cname" class="control-label col-lg-2">详情介绍</label>
                                     <div class="col-lg-10" style="">
-                                        <script id="container" name="about" type="text/plain">{!! $data["value"] !!}</script>
+                                        <script id="container" name="about" type="text/plain">{!! htmlspecialchars_decode($data["value"]) !!}</script>
                                     </div>
                                 </div>
                                 <div class="form-group">

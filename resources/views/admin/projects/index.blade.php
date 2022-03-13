@@ -7,28 +7,34 @@
                 <div class="col-lg-12">
                     <section class="panel">
                         <header class="panel-heading">
-                            <p>用户管理</p>
+                            <p>工程管理</p>
                             <div style="text-align: right">
-                                <a class="btn btn-success" href="{{ route('admin.user.create') }}"><i class="icon_plus_alt2"></i> 新增用户</a>
+                                <a class="btn btn-success" href="{{ route('admin.project.create') }}"><i class="icon_plus_alt2"></i> 创建工程</a>
                             </div>
                         </header>
 
                         <table class="table table-striped table-advance table-hover">
                             <tbody>
                             <tr>
-                                <th><i class="icon_profile"></i> 昵称</th>
-                                <th><i class="icon_mail_alt"></i> Email</th>
-                                <th><i class="icon_calendar"></i> 创建日期</th>
+                                <th>标题</th>
+                                <th>封面</th>
+                                <th>客户名</th>
+                                <th>地址</th>
+                                <th>日期</th>
                                 <th><i class="icon_cogs"></i> 操作</th>
                             </tr>
                             @foreach($data as $u)
                                 <tr>
-                                    <td>{{ $u->name }}</td>
-                                    <td>{{ empty($u->email) ? '/' : $u->email }}</td>
-                                    <td>{{ utc2date($u->created_at) }}</td>
+                                    <td>{{ $u->title }}</td>
+                                    <td>
+                                        <img height="100" src="{{ $u->cover }}" />
+                                    </td>
+                                    <td>{{ $u->client }}</td>
+                                    <td>{{ $u->address }}</td>
+                                    <td>{{ $u->date }}</td>
                                     <td>
                                         <div class="btn-group">
-                                            <a class="btn btn-primary edit-data" data-id="{{ $u->id }}" href="{{ route('admin.user.detail', ['id' => $u->id]) }}"><i class="icon_pencil-edit"></i></a>
+                                            <a class="btn btn-primary edit-data" data-id="{{ $u->id }}" href="{{ route('admin.project.update', ['id' => $u->id]) }}"><i class="icon_pencil-edit"></i></a>
                                             <a class="btn btn-danger delete" data-id="{{ $u->id }}" href="javascript:;"><i class="icon_close_alt2"></i></a>
                                         </div>
                                     </td>
@@ -57,7 +63,7 @@ $(function(){
       icon:3,
       yes: function(index, layero){
         $.ajax({
-          url: "{{ route('admin.user.delete') }}",
+          url: "{{ route('admin.project.delete') }}",
           data: requestData,
           type: "post",
           headers: {

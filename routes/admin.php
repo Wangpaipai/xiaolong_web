@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\IndexController;
 use App\Http\Controllers\Admin\QiniuController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\ProjectController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -36,6 +37,15 @@ Route::middleware(['auth_check'])->group(function() {
         Route::post('/edit', [UserController::class, 'userEdit'])->name('admin.user.edit');
         Route::get('/create/create', [UserController::class, 'userCreate'])->name('admin.user.create');
         Route::post('/register', [UserController::class, 'register'])->name('admin.register');
+    });
+
+    Route::prefix('project')->group(function() {
+        Route::get('/list', [ProjectController::class, 'projectList'])->name('admin.project.list');
+        Route::get('/create', [ProjectController::class, 'createProject'])->name('admin.project.create');
+        Route::get('/update', [ProjectController::class, 'updateProject'])->name('admin.project.update');
+        Route::post('/add', [ProjectController::class, 'addProject'])->name('admin.project.add');
+        Route::post('/delete', [ProjectController::class, 'deleteProject'])->name('admin.project.delete');
+        Route::post('/edit', [ProjectController::class, 'editProject'])->name('admin.project.edit');
     });
 
     Route::get('/system', [IndexController::class, 'systemView'])->name('admin.system.view');
