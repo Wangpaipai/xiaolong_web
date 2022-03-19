@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\GoodsController;
+use App\Http\Controllers\Admin\ImageController;
 use App\Http\Controllers\Admin\IndexController;
 use App\Http\Controllers\Admin\QiniuController;
 use App\Http\Controllers\Admin\UserController;
@@ -46,6 +48,24 @@ Route::middleware(['auth_check'])->group(function() {
         Route::post('/add', [ProjectController::class, 'addProject'])->name('admin.project.add');
         Route::post('/delete', [ProjectController::class, 'deleteProject'])->name('admin.project.delete');
         Route::post('/edit', [ProjectController::class, 'editProject'])->name('admin.project.edit');
+    });
+
+    Route::prefix('goods')->group(function() {
+        Route::get('/list', [GoodsController::class, 'goodsList'])->name('admin.goods.list');
+        Route::post('/remove', [GoodsController::class, 'goodsRemove'])->name('admin.goods.delete');
+        Route::get('/add', [GoodsController::class, 'addGoodsView'])->name('admin.goods.add');
+        Route::post('/create', [GoodsController::class, 'createGoods'])->name('admin.goods.create');
+        Route::get('/edit', [GoodsController::class, 'editGoods'])->name('admin.goods.edit');
+        Route::post('/update', [GoodsController::class, 'updateGoods'])->name('admin.goods.update');
+    });
+
+    Route::prefix('image')->group(function() {
+        Route::get('/list', [ImageController::class, 'imageList'])->name('admin.image.list');
+        Route::get('/add', [ImageController::class, 'imageAddView'])->name('admin.image.add');
+        Route::post('/create', [ImageController::class, 'imageCreate'])->name('admin.image.create');
+        Route::post('/delete', [ImageController::class, 'imageRemove'])->name('admin.image.remove');
+        Route::post('/update', [ImageController::class, 'imageUpdate'])->name('admin.image.update');
+        Route::get('/edit', [ImageController::class, 'imagEditView'])->name('admin.image.edit');
     });
 
     Route::get('/system', [IndexController::class, 'systemView'])->name('admin.system.view');

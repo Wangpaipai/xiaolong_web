@@ -6,53 +6,18 @@
             <div class="col-lg-12">
                 <section class="panel">
                     <header class="panel-heading">
-                        修改工程
+                        新增图片
                     </header>
                     <div class="panel-body">
                         <div class="form">
                             <form class="form-validate form-horizontal" id="feedback_form" method="get" action="">
-                                <input class="form-control" name="id" type="hidden" value="{{ $data->id }}" required />
-                                <div class="form-group ">
-                                    <label for="cname" class="control-label col-lg-2">标题 <span class="required">*</span></label>
-                                    <div class="col-lg-10">
-                                        <input class="form-control" name="title" minlength="5" type="text" value="{{ $data->title }}" required />
-                                    </div>
-                                </div>
 
                                 <div class="form-group ">
-                                    <label for="cname" class="control-label col-lg-2">地址 <span class="required">*</span></label>
-                                    <div class="col-lg-10">
-                                        <input class="form-control" name="address" type="text" value="{{ $data->address }}" required />
-                                    </div>
-                                </div>
-
-                                <div class="form-group ">
-                                    <label for="cname" class="control-label col-lg-2">客户名 <span class="required">*</span></label>
-                                    <div class="col-lg-10">
-                                        <input class="form-control" name="client" type="text" value="{{ $data->client }}" required />
-                                    </div>
-                                </div>
-
-                                <div class="form-group ">
-                                    <label for="cname" class="control-label col-lg-2">封面 <span class="required">*</span></label>
+                                    <label for="cname" class="control-label col-lg-2">图片 <span class="required">*</span></label>
                                     <div class="col-lg-10" id="fileUpload">
-                                        <img id="cover" src="{{ $data->cover }}" height="100" />
+                                        <img id="cover" src="" height="100" />
                                         <button id="imgUpload" class="btn btn-success" type="button"> + 点击上传</button>
-                                        <input class="form-control" name="cover" type="hidden" value="{{ $data->cover }}" required />
-                                    </div>
-                                </div>
-
-                                <div class="form-group ">
-                                    <label for="cname" class="control-label col-lg-2">日期 <span class="required">*</span></label>
-                                    <div class="col-lg-4">
-                                        <input class="form-control" name="date" type="date" value="{{ $data->date }}" required />
-                                    </div>
-                                </div>
-
-                                <div class="form-group ">
-                                    <label for="cname" class="control-label col-lg-2">详情介绍</label>
-                                    <div class="col-lg-10" style="">
-                                        <script id="container" name="content" type="text/plain">{!! htmlspecialchars_decode($data->content) !!}</script>
+                                        <input class="form-control" name="url" type="hidden" value="" required />
                                     </div>
                                 </div>
 
@@ -150,12 +115,10 @@ $(function(){
   });
 
 
-    var ue = UE.getEditor('container');
-
     $('.btn-primary').click(function() {
       param = $("#feedback_form").serialize()
       $.ajax({
-        url: "{{ route('admin.project.edit') }}",
+        url: "{{ route('admin.image.create') }}",
         data: param,
         type: "post",
         headers: {
@@ -165,7 +128,7 @@ $(function(){
           if (data.status === 200) {
             layer.msg(data.message, {icon: 1});
             setTimeout(function() {
-              location.href = "{{ route('admin.project.list') }}"
+              location.href = "{{ route('admin.image.list') }}"
             }, 1000)
           } else {
             layer.msg("操作失败", {icon: 2});
