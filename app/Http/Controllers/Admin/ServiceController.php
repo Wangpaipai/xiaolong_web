@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Admin\About;
 use App\Models\Admin\AdminMenu;
+use App\Models\Admin\ServiceData;
 use App\Models\Admin\SystemData;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
@@ -15,16 +16,16 @@ class ServiceController extends Controller
 {
 
     public function serviceView() {
-        $systemData = new SystemData();
-        $data = $systemData->getAll();
+        $service = new ServiceData();
+        $data = $service->getAll();
         return view("admin.service.index", ["data"=>$data]);
     }
 
     public function serviceSystem(Request $request) {
-        $systemData = new SystemData();
+        $service = new ServiceData();
         $data = $request->all();
         foreach ($data as $k=>$v) {
-            $systemData->updateData($k, $v);
+            $service->updateData($k, $v);
         }
         return responsSuccess([], "更新成功");
     }
