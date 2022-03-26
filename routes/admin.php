@@ -1,9 +1,11 @@
 <?php
 
+use App\Http\Controllers\Admin\BannerController;
 use App\Http\Controllers\Admin\GoodsController;
 use App\Http\Controllers\Admin\ImageController;
 use App\Http\Controllers\Admin\IndexController;
 use App\Http\Controllers\Admin\QiniuController;
+use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\ProjectController;
 use Illuminate\Support\Facades\Route;
@@ -66,6 +68,20 @@ Route::middleware(['auth_check'])->group(function() {
         Route::post('/delete', [ImageController::class, 'imageRemove'])->name('admin.image.remove');
         Route::post('/update', [ImageController::class, 'imageUpdate'])->name('admin.image.update');
         Route::get('/edit', [ImageController::class, 'imagEditView'])->name('admin.image.edit');
+    });
+
+    Route::prefix('banner')->group(function() {
+        Route::get('/list', [BannerController::class, 'bannerList'])->name('admin.banner.list');
+        Route::get('/add', [BannerController::class, 'bannerAddView'])->name('admin.banner.add');
+        Route::post('/create', [BannerController::class, 'bannerCreate'])->name('admin.banner.create');
+        Route::post('/delete', [BannerController::class, 'bannerRemove'])->name('admin.banner.remove');
+        Route::post('/update', [BannerController::class, 'bannerUpdate'])->name('admin.banner.update');
+        Route::get('/edit', [BannerController::class, 'bannerEditView'])->name('admin.banner.edit');
+    });
+
+    Route::prefix('service')->group(function() {
+        Route::get('/index', [ServiceController::class, 'serviceView'])->name('admin.service.list');
+        Route::post('/udpate', [ServiceController::class, 'serviceSystem'])->name('admin.service.update');
     });
 
     Route::get('/system', [IndexController::class, 'systemView'])->name('admin.system.view');
