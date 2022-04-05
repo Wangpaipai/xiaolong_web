@@ -15,7 +15,7 @@ return array(
 
 	/* 七牛云存储信息配置 */
 	'bucket'      => 'jiaju', // 七牛Bucket的名称
-	'host'        => 'http://qiniu.lxj595.love',
+	'host'        => 'https://qiniu.68san.cn',
 	'access_key'  => 'kK23ACK1T2KL5ndcVUzZSEZLkA-SWPTajlOx5Wdi',
 	'secret_key'  => 'BMqW-A1_B1ngyDTS1VEkACkij1AZxicmGmtHBnta',
 
