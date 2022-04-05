@@ -36,6 +36,14 @@
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 -->
     <!--[if lt IE 9]>
     <![endif]-->
+    <style>
+        #container{
+          height: 500px;
+        }
+        textarea{
+          resize:none;
+        }
+    </style>
 </head>
 
 <body>

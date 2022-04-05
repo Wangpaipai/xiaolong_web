@@ -64,7 +64,7 @@
                                 <div class="form-group ">
                                     <label for="cname" class="control-label col-lg-2">商品简介</label>
                                     <div class="col-lg-10">
-                                        <textarea class="form-control" name="brief" required>{{ $data->brief }}</textarea>
+                                        <textarea class="form-control" style="height: 250px" name="brief" required>{{ $data->brief }}</textarea>
                                     </div>
                                 </div>
 

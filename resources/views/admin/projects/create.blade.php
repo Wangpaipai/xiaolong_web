@@ -51,7 +51,7 @@
 
                                 <div class="form-group ">
                                     <label for="cname" class="control-label col-lg-2">详情介绍</label>
-                                    <div class="col-lg-10" style="">
+                                    <div class="col-lg-10" style="height: 600px">
                                         <script id="container" name="content" type="text/plain"></script>
                                     </div>
                                 </div>
@@ -150,7 +150,7 @@ $(function(){
   });
 
 
-    var ue = UE.getEditor('container');
+    var ue = UE.getEditor('container', {autoHeightEnabled: false});
 
     $('.btn-primary').click(function() {
       param = $("#feedback_form").serialize()

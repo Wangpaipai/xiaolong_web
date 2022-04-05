@@ -13,7 +13,7 @@
                             <form class="form-validate form-horizontal" id="feedback_form" method="get" action="">
                                 <div class="form-group ">
                                     <label for="cname" class="control-label col-lg-2">详情介绍</label>
-                                    <div class="col-lg-10" style="">
+                                    <div class="col-lg-10" style="height: 600px">
                                         <script id="container" name="about" type="text/plain">{!! htmlspecialchars_decode($data["value"]) !!}</script>
                                     </div>
                                 </div>
@@ -108,7 +108,7 @@ $(function(){
   });
 
 
-    var ue = UE.getEditor('container');
+    var ue = UE.getEditor('container', {autoHeightEnabled: false});
 
     $('.btn-primary').click(function() {
       param = $("#feedback_form").serialize()
