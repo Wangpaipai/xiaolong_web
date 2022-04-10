@@ -356,13 +356,13 @@
 
 					<div class="row">
 						<div class="form-group col-md-12">
-							<input name="message" maxlength="100" class="form-control" placeholder="联系地址... *" />
+							<input name="message" maxlength="100" class="form-control" placeholder="联系地址... *" required/>
 						</div>
 					</div>
 
 					<div class="row">
 						<div class="form-group col-md-12 text-center">
-							<button type="submit" class="btn btn-theme"><i class="fa fa-fw fa-paper-plane-o"></i> Send Message</button>
+							<button type="submit" class="btn btn-theme"><i class="fa fa-fw fa-paper-plane-o"></i> 提交</button>
 						</div>
 					</div>
 
