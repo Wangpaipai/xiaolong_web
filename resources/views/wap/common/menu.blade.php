@@ -57,11 +57,11 @@
                         <a href="#" class="brand">
 
                             <!-- Logo Big -->
-                            <img src="{{ asset('static/wap/images/logo.png') }}" class="logo-big" alt="">
+                            <img src="{{ $system["logo"] }}" class="logo-big" style="width: 143px;" alt="">
                             <!-- /Logo Big -->
 
                             <!-- Logo Small -->
-                            <img src="{{ asset('static/wap/images/logo-small.png') }}" class="logo-small" alt="">
+                            <img src="{{ $system["logo"] }}" style="height: 34px;" class="logo-small" alt="">
                             <!-- /Logo Small -->
 
                         </a>
@@ -74,14 +74,15 @@
                     <div id="main-menu" class="navbar-collapse collapse">
                         <ul class="nav navbar-nav navbar-right">
                             <li><a href="{{ route('wap.index') }}">首页</a></li>
-                            <li><a href="about.html">About</a></li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle">Pages</a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="404.html">404</a></li>
-                                    <li><a href="services.html">Services</a></li>
-                                </ul>
-                            </li>
+                            <li><a href="{{ route('wap.about') }}">关于我们</a></li>
+                            <li><a href="{{ route('wap.service') }}">服务</a></li>
+{{--                            <li class="dropdown">--}}
+{{--                                <a href="#" class="dropdown-toggle">Pages</a>--}}
+{{--                                <ul class="dropdown-menu">--}}
+{{--                                    <li><a href="404.html">404</a></li>--}}
+{{--                                    <li><a href="services.html">Services</a></li>--}}
+{{--                                </ul>--}}
+{{--                            </li>--}}
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle">Blog</a>
                                 <ul class="dropdown-menu">

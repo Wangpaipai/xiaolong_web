@@ -103,7 +103,7 @@
 				<div class="col-md-4 col-sm-6 fadeIn wow" data-wow-duration="1.3s" data-wow-delay="{{ $k * 0.2 }}s">
 					<a href="{{ $v->cover }}" class="project-item image-popup">
 						<div class="gallery-image">
-							<img src="{{ $v->cover }}" alt="">
+							<img src="{{ $v->cover }}" style="width: 360px;height: 202px" alt="">
 						</div>
 						<div class="info">
 							<div class="h4 title">{{ $v->title }}</div>
@@ -176,33 +176,33 @@
 
 			<!-- Statistic Block -->
 			<div class="col-sm-3 col-xs-6 stat">
-				<span class="icon_pens icon zoomIn wow" data-wow-duration="0.7s"></span>
-				<div class="number animate-number h2" data-value="180"></div>
-				<h4 class="title bounceInUp wow" data-wow-duration="0.7s">Finished Projects</h4>
-			</div>
-			<!-- /Statistic Block -->
-
-			<!-- Statistic Block -->
-			<div class="col-sm-3 col-xs-6 stat">
-				<span class="icon_group icon zoomIn wow" data-wow-duration="0.7s"></span>
-				<div class="number animate-number h2" data-value="1806"></div>
-				<h4 class="title bounceInUp wow" data-wow-duration="0.7s">Happy Customers</h4>
-			</div>
-			<!-- /Statistic Block -->
-
-			<!-- Statistic Block -->
-			<div class="col-sm-3 col-xs-6 stat">
-				<span class="icon_mug icon zoomIn wow" data-wow-duration="0.7s"></span>
-				<div class="number animate-number h2" data-value="238"></div>
-				<h4 class="title bounceInUp wow" data-wow-duration="0.7s">Coffee</h4>
-			</div>
-			<!-- /Statistic Block -->
-
-			<!-- Statistic Block -->
-			<div class="col-sm-3 col-xs-6 stat">
 				<span class="icon_building icon zoomIn wow" data-wow-duration="0.7s"></span>
-				<div class="number animate-number h2" data-value="3485"></div>
-				<h4 class="title bounceInUp wow" data-wow-duration="0.7s">Days at Work</h4>
+				<div class="number animate-number h2" data-value="{{ $count["project"] }}"></div>
+				<h4 class="title bounceInUp wow" data-wow-duration="0.7s">项目量</h4>
+			</div>
+			<!-- /Statistic Block -->
+
+			<!-- Statistic Block -->
+			<div class="col-sm-3 col-xs-6 stat">
+				<span class="icon_gift_alt icon zoomIn wow" data-wow-duration="0.7s"></span>
+				<div class="number animate-number h2" data-value="{{ $count["goods"] }}"></div>
+				<h4 class="title bounceInUp wow" data-wow-duration="0.7s">产品量</h4>
+			</div>
+			<!-- /Statistic Block -->
+
+			<!-- Statistic Block -->
+			<div class="col-sm-3 col-xs-6 stat">
+				<span class="icon_pens icon zoomIn wow" data-wow-duration="0.7s"></span>
+				<div class="number animate-number h2">7X24小时</div>
+				<h4 class="title bounceInUp wow" data-wow-duration="0.7s">服务时间</h4>
+			</div>
+			<!-- /Statistic Block -->
+
+			<!-- Statistic Block -->
+			<div class="col-sm-3 col-xs-6 stat">
+				<span class="icon_pencil-edit icon zoomIn wow" data-wow-duration="0.7s"></span>
+				<div class="number animate-number h2">全年365天</div>
+				<h4 class="title bounceInUp wow" data-wow-duration="0.7s">工作时间</h4>
 			</div>
 			<!-- /Statistic Block -->
 
@@ -285,106 +285,31 @@
 				<!-- Testimonials Carousel -->
 				<div id="testimonials-carousel" class="testimonials-carousel owl-carousel owl-theme">
 
-					<!-- Testimonial -->
-					<div class="testimonial">
+					@foreach($goods as $k=>$v)
+						<!-- Testimonial -->
+						<div class="testimonial">
 
-						<div class="content">
-							<div class="media">
-								<div class="media-left">
-									<img src="{{ asset('static/wap/images/author-image-01.jpg') }}" alt="">
-								</div>
-								<div class="media-body media-middle">
-									<p class="text">
-										It is a long established fact that a reader will be distracted by the readable content
-										of a page when looking at its layout.
-									</p>
-								</div>
-							</div>
-						</div>
-
-						<div class="info">
-							<h4 class="author">Jeremy Scott</h4>
-							<span class="company">Company Name</span>
-						</div>
-
-					</div>
-					<!-- /Testimonial -->
-
-					<!-- Testimonial -->
-					<div class="testimonial">
-
-						<div class="content">
-							<div class="media">
-								<div class="media-left">
-									<img src="{{ asset('static/wap/images/author-image-02.jpg') }}" alt="">
-								</div>
-								<div class="media-body media-middle">
-									<p class="text">
-										It is a long established fact that a reader will be distracted by the readable content
-										of a page when looking at its layout.
-									</p>
+							<div class="content">
+								<div class="media">
+									<div class="media-left">
+										<img src="{{ $v->cover }}" style="width: 100px;height: 100px" alt="">
+									</div>
+									<div class="media-body media-middle">
+										<p class="text">
+											{{ $v->brief }}
+										</p>
+									</div>
 								</div>
 							</div>
-						</div>
 
-						<div class="info">
-							<h4 class="author">Ann Harper</h4>
-							<span class="company">Company Name</span>
-						</div>
-
-					</div>
-					<!-- /Testimonial -->
-
-					<!-- Testimonial -->
-					<div class="testimonial">
-
-						<div class="content">
-							<div class="media">
-								<div class="media-left">
-									<img src="{{ asset('static/wap/images/author-image-03.jpg') }}" alt="">
-								</div>
-								<div class="media-body media-middle">
-									<p class="text">
-										It is a long established fact that a reader will be distracted by the readable content
-										of a page when looking at its layout.
-									</p>
-								</div>
+							<div class="info">
+								<h4 class="author">{{ $v->name }}</h4>
+								<span class="company">￥{{ $v->price }} / {{ $v->uint }}</span>
 							</div>
+
 						</div>
-
-						<div class="info">
-							<h4 class="author">William Bell</h4>
-							<span class="company">Company Name</span>
-						</div>
-
-					</div>
-					<!-- /Testimonial -->
-
-					<!-- Testimonial -->
-					<div class="testimonial">
-
-						<div class="content">
-							<div class="media">
-								<div class="media-left">
-									<img src="{{ asset('static/wap/images/author-image-04.jpg') }}" alt="">
-								</div>
-								<div class="media-body media-middle">
-									<p class="text">
-										It is a long established fact that a reader will be distracted by the readable content
-										of a page when looking at its layout.
-									</p>
-								</div>
-							</div>
-						</div>
-
-						<div class="info">
-							<h4 class="author">Gerald Payne</h4>
-							<span class="company">Company Name</span>
-						</div>
-
-					</div>
-					<!-- /Testimonial -->
-
+						<!-- /Testimonial -->
+					@endforeach
 				</div>
 				<!-- /Testimonials Carousel -->
 
@@ -404,8 +329,8 @@
 		<div class="row">
 			<div class="col-md-6 col-md-offset-3">
 				<header class="text-center">
-					<h2 class="section-title">Want to say <span class="text-theme">Hello?</span></h2>
-					<p class="section-subtitle">It is a long established fact that a reader</p>
+					<h2 class="section-title">提交 <span class="text-theme">预约</span></h2>
+					<p class="section-subtitle">请填写下列表单提交</p>
 				</header>
 			</div>
 		</div>
@@ -422,16 +347,16 @@
 
 					<div class="row">
 						<div class="form-group col-md-6">
-							<input type="text" name="name" class="form-control" placeholder="Your Name... *" required>
+							<input type="text" name="name" maxlength="20" class="form-control" placeholder="称呼... *" required>
 						</div>
 						<div class="form-group col-md-6">
-							<input type="email" name="email" class="form-control" placeholder="E-mail address... *" required>
+							<input type="text" name="mobile" maxlength="11" class="form-control" placeholder="手机号... *" required>
 						</div>
 					</div>
 
 					<div class="row">
 						<div class="form-group col-md-12">
-							<textarea name="message" class="form-control" placeholder="Message... "></textarea>
+							<input name="message" maxlength="100" class="form-control" placeholder="联系地址... *" />
 						</div>
 					</div>
 

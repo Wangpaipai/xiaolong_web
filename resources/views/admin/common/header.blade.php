@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Creative - Bootstrap 3 Responsive Admin Template">
     <meta name="author" content="GeeksLabs">
-    <link rel="shortcut icon" href="{{ asset('static/admin/img/favicon.ico') }}">
+{{--    <link rel="shortcut icon" href="{{ asset('static/admin/img/favicon.ico') }}">--}}
 
     <title>后台管理系统</title>
 

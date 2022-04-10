@@ -3,6 +3,7 @@ namespace App\Http\Controllers\Wap;
 
 
 use App\Models\Wap\Banner;
+use App\Models\Wap\Goods;
 use App\Models\Wap\Projects;
 use App\Models\Wap\ServiceData;
 
@@ -21,16 +22,24 @@ class IndexController extends CommonController
         // 特色
         $features = $serviceData->getTitleAll(["title8", "title9", "title10", "title11", "describe8", "describe9", "describe10", "describe11"]);
 
+        $count = [];
         $projects = new Projects();
-        $projectTop6 = $projects->getProjectTop6();
+        $count["project"] = $projects->getCount();
 
+//        $projectTop6 = $projects->getProjectTop6();
+        $goods = new Goods();
+        $goodsList = $goods->getGoodsList();
+        $count["goods"] = $goods->getCount();
         $data = [
             "banner" => $bannerList,
             "service" => $service,
             "quality" => $quality,
             "features" => $features,
-            "project" => $projectTop6
+            "goods" => $goodsList,
+            "count" => $count
         ];
+
+        view()->share("siteName", "首页");
 
         return view("wap.index", $data);
     }

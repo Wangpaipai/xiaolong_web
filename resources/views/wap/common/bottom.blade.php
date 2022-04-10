@@ -40,37 +40,25 @@
 
                 <h3 class="title">最新 <span class="text-theme">项目</span></h3>
 
-                <!-- Footer Post -->
-                <div class="media post">
-                    <div class="media-left">
-                        <div class="image">
-                            <img src="{{ asset('static/wap/images/last-post-01.jpg') }}" alt="">
-                        </div>
-                    </div>
-                    <div class="media-body">
-                        <p class="text">
-                            It is a long established fact that a reader will be distracted.
-                        </p>
-                        <a href="#">Read more</a>
-                    </div>
-                </div>
-                <!-- /Footer Post -->
+                @for($i = 0; $i < 2; $i++)
 
-                <!-- Footer Post -->
-                <div class="media post">
-                    <div class="media-left">
-                        <div class="image">
-                            <img src="{{ asset('static/wap/images/last-post-02.jpg') }}" alt="">
+                    <!-- Footer Post -->
+                    <div class="media post">
+                        <div class="media-left">
+                            <div class="image">
+                                <img src="{{ $project[$i]->cover }}" alt="">
+                            </div>
+                        </div>
+                        <div class="media-body">
+                            <p class="text">
+                                {{ $project[$i]->address }} - {{ $project[$i]->client }}
+                            </p>
+                            <a href="#">{{ $project[$i]->title }}</a>
                         </div>
                     </div>
-                    <div class="media-body">
-                        <p class="text">
-                            It is a long established fact that a reader will be distracted.
-                        </p>
-                        <a href="#">Read more</a>
-                    </div>
-                </div>
-                <!-- /Footer Post -->
+                    <!-- /Footer Post -->
+
+                @endfor
 
             </div>
             <!-- /Footer Column -->
@@ -83,8 +71,8 @@
                 <!-- Footer Menu -->
                 <ul class="menu">
                     <li><a href="{{ route('wap.index') }}">首页</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Features</a></li>
+                    <li><a href="{{ route('wap.about') }}">关于我们</a></li>
+                    <li><a href="{{ route('wap.service') }}">服务</a></li>
                     <li><a href="#">Projects</a></li>
                     <li><a href="#">Blog</a></li>
                     <li><a href="#">Contact</a></li>
@@ -100,7 +88,7 @@
 
                 <!-- Footer Logo -->
                 <div class="logo">
-                    <img src="{{ asset('static/wap/images/logo.png') }}" alt="">
+                    <img src="{{ $system["logo"] }}" class="logo-big" style="width: 143px;" alt="">
                 </div>
                 <!-- /Footer Logo -->
 
@@ -114,7 +102,7 @@
 
                 <!-- Copyright -->
                 <p class="copyright">
-                    版权所有 &copy; 2022 <strong>六八伞业</strong>
+                    版权所有 &copy; 2022 <strong>68伞业</strong>
                 </p>
                 <!-- /Copyright -->
 
