@@ -103,7 +103,7 @@
 				<div class="col-md-4 col-sm-6 fadeIn wow" data-wow-duration="1.3s" data-wow-delay="{{ $k * 0.2 }}s">
 					<a href="{{ $v->cover }}" class="project-item image-popup">
 						<div class="gallery-image">
-							<img src="{{ $v->cover }}"  alt="">
+							<img src="{{ $v->cover }}" style="width: 100%;min-height: 202px" alt="">
 						</div>
 						<div class="info">
 							<div class="h4 title">{{ $v->title }}</div>
