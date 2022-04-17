@@ -9,7 +9,7 @@
             <!-- Page Title -->
             <div class="col-md-8">
                 <h1 class="title">我们的服务</h1>
-                <div class="subtitle">以下是我们的服务宗旨 </div>
+                <div class="subtitle">{{ $describe->value }} </div>
             </div>
             <!-- /Page Title -->
 

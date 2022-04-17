@@ -16,8 +16,9 @@ class ServiceController extends CommonController
         $quality = $serviceData->getTitleAll(["title4", "title5", "title6", "title7", "describe4", "describe5", "describe6", "describe7"]);
         // 特色
         $features = $serviceData->getTitleAll(["title8", "title9", "title10", "title11", "describe8", "describe9", "describe10", "describe11"]);
+        $describe = $serviceData->getOne("describe");
 
-        return view("wap.service.index", ["service" => $service, "quality" => $quality, "features" => $features]);
+        return view("wap.service.index", ["service" => $service, "quality" => $quality, "features" => $features, "describe" => $describe]);
     }
 
 }

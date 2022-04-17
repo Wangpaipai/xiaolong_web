@@ -73,8 +73,8 @@
                     <li><a href="{{ route('wap.index') }}">首页</a></li>
                     <li><a href="{{ route('wap.about') }}">关于我们</a></li>
                     <li><a href="{{ route('wap.service') }}">服务</a></li>
-                    <li><a href="#">Projects</a></li>
-                    <li><a href="#">Blog</a></li>
+                    <li><a href="{{ route('wap.project.list') }}">项目</a></li>
+                    <li><a href="{{ route('wap.goods.list') }}">商品</a></li>
                     <li><a href="#">Contact</a></li>
                 </ul>
                 <!-- /Footer Menu -->

@@ -32,4 +32,9 @@ class ServiceData extends Model
         }
         return $res;
     }
+
+    public function getOne($title) {
+        $data = $this->where("key", $title)->first();
+        return $data;
+    }
 }
