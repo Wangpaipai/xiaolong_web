@@ -111,7 +111,7 @@
 		<div class="row mt">
 			@foreach($project as $k => $v)
 				<div class="col-md-4 col-sm-6 fadeIn wow clickList" data-href="{{ route("wap.project.detail", ["id" => $v->id]) }}" data-wow-duration="1.3s" data-wow-delay="{{ $k * 0.2 }}s">
-					<a href="javascript:;" onclick="return false" class="project-item image-popup">
+					<a href="javascript:;" onclick="return false" class="project-item">
 						<div class="gallery-image">
 							<img src="{{ $v->cover }}" style="width: 100%;min-height: 202px" alt="">
 						</div>
