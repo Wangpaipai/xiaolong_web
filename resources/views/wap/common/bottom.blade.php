@@ -1,4 +1,9 @@
 
+<style>
+  .footerProject:hover{
+    cursor:pointer;
+  }
+</style>
 
 <!-- Footer -->
 <footer class="footer section-small">
@@ -43,7 +48,7 @@
                 @for($i = 0; $i < 2; $i++)
 
                     <!-- Footer Post -->
-                    <div class="media post">
+                    <div class="media post footerProject" data-href="{{ route("wap.project.detail", ["id" => $project[$i]->id]) }}">
                         <div class="media-left">
                             <div class="image">
                                 <img src="{{ $project[$i]->cover }}" alt="">
@@ -53,7 +58,7 @@
                             <p class="text">
                                 {{ $project[$i]->address }} - {{ $project[$i]->client }}
                             </p>
-                            <a href="#">{{ $project[$i]->title }}</a>
+                            <a href="javascript:;">{{ $project[$i]->title }}</a>
                         </div>
                     </div>
                     <!-- /Footer Post -->
@@ -75,7 +80,7 @@
                     <li><a href="{{ route('wap.service') }}">服务</a></li>
                     <li><a href="{{ route('wap.project.list') }}">项目</a></li>
                     <li><a href="{{ route('wap.goods.list') }}">商品</a></li>
-                    <li><a href="#">Contact</a></li>
+{{--                    <li><a href="#">Contact</a></li>--}}
                 </ul>
                 <!-- /Footer Menu -->
 
@@ -188,3 +193,5 @@
 
 {{--    <div class="styleswitcher-button vertical-middle"><i class="fa fa-gear"></i></div>--}}
 {{--</div>--}}
+
+

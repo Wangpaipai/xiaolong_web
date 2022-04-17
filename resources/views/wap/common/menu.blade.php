@@ -85,24 +85,24 @@
 {{--                                    <li><a href="services.html">Services</a></li>--}}
 {{--                                </ul>--}}
 {{--                            </li>--}}
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle">Blog</a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="blog-left-sidebar.html">Post List - Left Sidebar</a></li>
-                                    <li><a href="blog.html">Post List - Right Sidebar</a></li>
-                                    <li><a href="single-post.html">Single Post</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle">Portfolio</a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="portfolio-2-col.html">2 Columns</a></li>
-                                    <li><a href="portfolio-3-col.html">3 Columns</a></li>
-                                    <li><a href="portfolio.html">4 Columns</a></li>
-                                    <li><a href="single-project.html">Project Page</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="contact.html">Contact</a></li>
+{{--                            <li class="dropdown">--}}
+{{--                                <a href="#" class="dropdown-toggle">Blog</a>--}}
+{{--                                <ul class="dropdown-menu">--}}
+{{--                                    <li><a href="blog-left-sidebar.html">Post List - Left Sidebar</a></li>--}}
+{{--                                    <li><a href="blog.html">Post List - Right Sidebar</a></li>--}}
+{{--                                    <li><a href="single-post.html">Single Post</a></li>--}}
+{{--                                </ul>--}}
+{{--                            </li>--}}
+{{--                            <li class="dropdown">--}}
+{{--                                <a href="#" class="dropdown-toggle">Portfolio</a>--}}
+{{--                                <ul class="dropdown-menu">--}}
+{{--                                    <li><a href="portfolio-2-col.html">2 Columns</a></li>--}}
+{{--                                    <li><a href="portfolio-3-col.html">3 Columns</a></li>--}}
+{{--                                    <li><a href="portfolio.html">4 Columns</a></li>--}}
+{{--                                    <li><a href="single-project.html">Project Page</a></li>--}}
+{{--                                </ul>--}}
+{{--                            </li>--}}
+{{--                            <li><a href="contact.html">Contact</a></li>--}}
                         </ul>
                     </div>
                     <!-- /Navigation -->

@@ -1,6 +1,17 @@
 ﻿@include('wap.common.header')
 @include('wap.common.menu')
 
+<style>
+	.clickList:hover{
+		cursor:pointer;
+	}
+	.gallery-image:after{
+		display: none;
+	}
+	.gallery-image:before{
+		display: none;
+	}
+</style>
 <!-- Slider -->
 <div class="slider owl-carousel owl-theme">
 
@@ -99,13 +110,12 @@
 		<!-- Section Content -->
 		<div class="row mt">
 			@foreach($project as $k => $v)
-
-				<div class="col-md-4 col-sm-6 fadeIn wow" data-wow-duration="1.3s" data-wow-delay="{{ $k * 0.2 }}s">
-					<a href="{{ $v->cover }}" class="project-item image-popup">
+				<div class="col-md-4 col-sm-6 fadeIn wow clickList" data-href="{{ route("wap.project.detail", ["id" => $v->id]) }}" data-wow-duration="1.3s" data-wow-delay="{{ $k * 0.2 }}s">
+					<a href="javascript:;" onclick="return false" class="project-item image-popup">
 						<div class="gallery-image">
 							<img src="{{ $v->cover }}" style="width: 100%;min-height: 202px" alt="">
 						</div>
-						<div class="info">
+						<div class="info" >
 							<div class="h4 title">{{ $v->title }}</div>
 							<p class="description"># {{ $v->address }}</p>
 							<div class="social">
@@ -287,7 +297,7 @@
 
 					@foreach($goods as $k=>$v)
 						<!-- Testimonial -->
-						<div class="testimonial">
+						<div class="testimonial clickList" data-href="{{ route("wap.goods.detail", ["id" => $v->id]) }}">
 
 							<div class="content">
 								<div class="media">
@@ -384,3 +394,12 @@
 
 @include('wap.common.bottom')
 @include('wap.common.footer')
+
+<script>
+$(function(){
+	$(".clickList").click(function(e){
+		var href = $(this).attr("data-href")
+		location.href=href
+	})
+})
+</script>

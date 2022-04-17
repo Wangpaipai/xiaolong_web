@@ -17,5 +17,15 @@
 <script src="{{ asset('static/wap/demo/styleswitcher.js') }}"></script>
 <!-- /Styleswitcher -->
 
+
+<script>
+$(function(){
+  $(".footerProject").click(function(){
+    var href = $(this).attr("data-href")
+    location.href=href
+  })
+})
+</script>
+
 </body>
 </html>
