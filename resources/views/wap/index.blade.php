@@ -353,8 +353,6 @@
 			<div class="col-md-8 col-md-offset-2 contact-form fadeIn wow">
 				<form class="form-ajax" method="post">
 
-					<input type="hidden" name="form" value="Contact">
-
 					<div class="row">
 						<div class="form-group col-md-6">
 							<input type="text" name="name" maxlength="20" class="form-control" placeholder="称呼... *" required>
@@ -366,13 +364,13 @@
 
 					<div class="row">
 						<div class="form-group col-md-12">
-							<input name="message" maxlength="100" class="form-control" placeholder="联系地址... *" required/>
+							<input name="address" maxlength="100" class="form-control" placeholder="联系地址... *" required/>
 						</div>
 					</div>
 
 					<div class="row">
 						<div class="form-group col-md-12 text-center">
-							<button type="submit" class="btn btn-theme"><i class="fa fa-fw fa-paper-plane-o"></i> 提交</button>
+							<button type="button" class="btn btn-theme contact"><i class="fa fa-fw fa-paper-plane-o"></i> 提交</button>
 						</div>
 					</div>
 

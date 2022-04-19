@@ -8,9 +8,12 @@ use App\Models\Wap\SystemData;
 
 class CommonController extends Controller
 {
+    public $receive_mobile = "";
+
     public function __construct() {
         $systemData = new SystemData();
         $all = $systemData->getAll();
+        $this->receive_mobile = $all["reserve_mobile"];
 
         view()->share("system", $all);
 

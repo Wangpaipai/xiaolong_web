@@ -325,65 +325,65 @@ $(function($) {
      * Google Maps
      *-----------------------------------------------------------------*/
 
-    if ($('#map-canvas').length > 0) {
-
-        var lat_lng = new google.maps.LatLng(-37.85787, 144.5191615),
-            map_center = new google.maps.LatLng(-37.728687, 145.162939),
-            //hue ='#ff5555',
-            marker_title = 'Company Name',
-            marker_information =
-                '<div id="map-window">' +
-                '<h4>We are here!</h4>' +
-                '</div>';
-
-
-        // map settings
-        var settings = {
-            zoom          : 9,
-            center        : map_center,
-            mapTypeControl: false,
-            mapTypeId     : google.maps.MapTypeId.ROADMAP,
-            styles        : [
-                {
-                    //stylers: [
-                    //    { hue: hue },
-                    //    { saturation: -20 }
-                    //]
-                }, {
-                    featureType: 'road',
-                    elementType: 'geometry',
-                    stylers    : [
-                        { lightness: 100 },
-                        { visibility: 'simplified' }
-                    ]
-                }, {
-                    featureType: 'road',
-                    elementType: 'labels',
-                    stylers    : [
-                        { visibility: 'off' }
-                    ]
-                }
-            ]
-        };
-
-        // create map
-        var map = new google.maps.Map(document.getElementById('map-canvas'), settings);
-
-        // map marker (see global)
-        var marker = new google.maps.Marker({
-            position: lat_lng,
-            map: map,
-            title: marker_title
-        });
-
-        // tooltip
-        var info_window = new google.maps.InfoWindow({
-            content: marker_information
-        });
-
-        // open tooltip
-        info_window.open(map, marker);
-    }
+    // if ($('#map-canvas').length > 0) {
+    //
+    //     var lat_lng = new google.maps.LatLng(-37.85787, 144.5191615),
+    //         map_center = new google.maps.LatLng(-37.728687, 145.162939),
+    //         //hue ='#ff5555',
+    //         marker_title = 'Company Name',
+    //         marker_information =
+    //             '<div id="map-window">' +
+    //             '<h4>We are here!</h4>' +
+    //             '</div>';
+    //
+    //
+    //     // map settings
+    //     var settings = {
+    //         zoom          : 9,
+    //         center        : map_center,
+    //         mapTypeControl: false,
+    //         mapTypeId     : google.maps.MapTypeId.ROADMAP,
+    //         styles        : [
+    //             {
+    //                 //stylers: [
+    //                 //    { hue: hue },
+    //                 //    { saturation: -20 }
+    //                 //]
+    //             }, {
+    //                 featureType: 'road',
+    //                 elementType: 'geometry',
+    //                 stylers    : [
+    //                     { lightness: 100 },
+    //                     { visibility: 'simplified' }
+    //                 ]
+    //             }, {
+    //                 featureType: 'road',
+    //                 elementType: 'labels',
+    //                 stylers    : [
+    //                     { visibility: 'off' }
+    //                 ]
+    //             }
+    //         ]
+    //     };
+    //
+    //     // create map
+    //     var map = new google.maps.Map(document.getElementById('map-canvas'), settings);
+    //
+    //     // map marker (see global)
+    //     var marker = new google.maps.Marker({
+    //         position: lat_lng,
+    //         map: map,
+    //         title: marker_title
+    //     });
+    //
+    //     // tooltip
+    //     var info_window = new google.maps.InfoWindow({
+    //         content: marker_information
+    //     });
+    //
+    //     // open tooltip
+    //     info_window.open(map, marker);
+    // }
 
     /*-----------------------------------------------------------------
      * Finish loading

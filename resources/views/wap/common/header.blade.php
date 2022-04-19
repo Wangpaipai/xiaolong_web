@@ -26,6 +26,7 @@
     <link rel="alternate stylesheet" href="{{ asset('static/wap/css/theme-mariner.css') }}" title="theme-mariner">
     <link rel="alternate stylesheet" href="{{ asset('static/wap/css/theme-medium-purple.css') }}" title="theme-medium-purple">
     <link rel="alternate stylesheet" href="{{ asset('static/wap/css/theme-lavender-magenta.css') }}" title="theme-lavender-magenta">
+    <link href="{{ asset('static/admin/js/layui/css/layui.css') }}" rel="stylesheet" />
 
 </head>
 <body>

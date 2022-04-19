@@ -18,8 +18,8 @@
 
                     <!-- Feedback -->
                     <div class="col-md-7">
-                        <a href="#" data-route="{{ route("wap.map") }}" class="iframe-popup"><span class="icon icon_pin_alt"></span> {{ $system["address"] }}</a>
-                        <a href="#"><span class="icon icon_mail_alt"></span> {{ $system["email"] }}</a>
+                        <a href="javascript:;" data-route="{{ route("wap.map") }}" class="iframe-popup"><span class="icon icon_pin_alt"></span> {{ $system["address"] }}</a>
+                        <a href="mailto:{{ $system["email"] }}"><span class="icon icon_mail_alt"></span> {{ $system["email"] }}</a>
                         <a href="tel:{{ $system["tel"] }}"><span class="icon icon_phone"></span> {{ $system["tel"] }}</a>
                     </div>
                     <!-- /Feedback -->
@@ -54,7 +54,7 @@
                         <!-- /Toggle Button -->
 
                         <!-- Brand -->
-                        <a href="#" class="brand">
+                        <a href="{{ route('wap.index') }}" class="brand">
 
                             <!-- Logo Big -->
                             <img src="{{ $system["logo"] }}" class="logo-big" style="width: 143px;" alt="">
@@ -73,11 +73,13 @@
                     <!-- Navigation -->
                     <div id="main-menu" class="navbar-collapse collapse">
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a href="{{ route('wap.index') }}">首页</a></li>
+                            <li class="active"><a href="{{ route('wap.index') }}">首页</a></li>
                             <li><a href="{{ route('wap.about') }}">关于我们</a></li>
                             <li><a href="{{ route('wap.service') }}">服务</a></li>
                             <li><a href="{{ route('wap.project.list') }}">项目</a></li>
                             <li><a href="{{ route('wap.goods.list') }}">商品</a></li>
+                            <li><a href="{{ route('wap.images.list') }}">工程图集</a></li>
+                            <li><a href="{{ route('wap.contact') }}">联系我们</a></li>
 {{--                            <li class="dropdown">--}}
 {{--                                <a href="#" class="dropdown-toggle">Pages</a>--}}
 {{--                                <ul class="dropdown-menu">--}}
