@@ -25,7 +25,7 @@
                 <hr>
                 <div class="signup-form">
                     <div class="form-group">
-                        <a href="#"><span class="icon icon_mail_alt"></span> {{ $system["email"] }}</a>
+                        <a href="mailto:{{ $system["email"] }}"><span class="icon icon_mail_alt"></span> {{ $system["email"] }}</a>
                     </div>
                 </div>
 
@@ -80,6 +80,8 @@
                     <li><a href="{{ route('wap.service') }}">服务</a></li>
                     <li><a href="{{ route('wap.project.list') }}">项目</a></li>
                     <li><a href="{{ route('wap.goods.list') }}">商品</a></li>
+                    <li><a href="{{ route('wap.images.list') }}">工程图集</a></li>
+                    <li><a href="{{ route('wap.contact') }}">联系我们</a></li>
 {{--                    <li><a href="#">Contact</a></li>--}}
                 </ul>
                 <!-- /Footer Menu -->

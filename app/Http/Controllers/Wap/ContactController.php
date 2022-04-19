@@ -18,20 +18,25 @@ class ContactController extends CommonController
     }
 
     public function submit(Request $request) {
-        $data = $request->all();
-
-        $reserves = new Reserves();
-        $reserves->createdData($data);
+        $data["mobile"] = $request->get("mobile");
+        $data["address"] = $request->get("address");
+        $data["name"] = $request->get("name");
 
         $param = [];
         $param[] = $data["name"];
         $param[] = $data["address"];
         $param[] = $data["mobile"];
-        if (isset($data["goods_id"])) {
+
+        if (!empty($request->get("goods_id"))) {
+            $data["goods_id"] = $request->get("goods_id");
+
             $goods = new Goods();
             $goodsData = $goods->getOne($data["goods_id"]);
             $param[] = $goodsData->name;
         }
+
+        $reserves = new Reserves();
+        $reserves->createdData($data);
 
         $this->sendSms($this->receive_mobile, $param);
 
