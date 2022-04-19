@@ -36,4 +36,8 @@ class Images extends Model
     public function updateData($data) {
         $this->where("id", $data["id"])->update($data);
     }
+
+    public function getCount() {
+        return $this->count();
+    }
 }

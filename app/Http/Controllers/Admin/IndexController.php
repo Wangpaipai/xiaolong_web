@@ -5,6 +5,10 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Admin\About;
 use App\Models\Admin\AdminMenu;
+use App\Models\Admin\Goods;
+use App\Models\Admin\Images;
+use App\Models\Admin\Projects;
+use App\Models\Admin\Reserves;
 use App\Models\Admin\SystemData;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
@@ -32,7 +36,19 @@ class IndexController extends Controller
     }
 
     public function dashboard() {
-        return view('admin.dashboard');
+        $projects = new Projects();
+        $data["project"] = $projects->getCount();
+
+        $goods = new Goods();
+        $data["goods"] = $goods->getCount();
+
+        $images = new Images();
+        $data["images"] = $images->getCount();
+
+        $reserve = new Reserves();
+        $data["reserve"] = $reserve->getCount();
+
+        return view('admin.dashboard', ["data" => $data]);
     }
 
     public function systemView() {

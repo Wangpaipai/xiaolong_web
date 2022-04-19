@@ -36,4 +36,8 @@ class Projects extends Model
     public function updateProject($data) {
         $this->where("id", $data["id"])->update($data);
     }
+
+    public function getCount() {
+        return $this->count();
+    }
 }

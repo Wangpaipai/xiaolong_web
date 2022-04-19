@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\GoodsController;
 use App\Http\Controllers\Admin\ImageController;
 use App\Http\Controllers\Admin\IndexController;
 use App\Http\Controllers\Admin\QiniuController;
+use App\Http\Controllers\Admin\ReserveController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\ProjectController;
@@ -82,6 +83,10 @@ Route::middleware(['auth_check'])->group(function() {
     Route::prefix('service')->group(function() {
         Route::get('/index', [ServiceController::class, 'serviceView'])->name('admin.service.list');
         Route::post('/udpate', [ServiceController::class, 'serviceSystem'])->name('admin.service.update');
+    });
+
+    Route::prefix('reserve')->group(function() {
+        Route::get('/list', [ReserveController::class, 'list'])->name('admin.reserve.list');
     });
 
     Route::get('/system', [IndexController::class, 'systemView'])->name('admin.system.view');

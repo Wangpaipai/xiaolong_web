@@ -37,4 +37,8 @@ class Goods extends Model
     public function updateGoods($data) {
         $this->where("id", $data["id"])->update($data);
     }
+
+    public function getCount() {
+        return $this->count();
+    }
 }
