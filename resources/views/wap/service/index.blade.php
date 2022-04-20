@@ -86,7 +86,7 @@
             <div class="col-md-8">
                 <div class="row">
 
-                    <h3 class="title">特色</h3>
+                    <h3 class="title">&nbsp;&nbsp;特色</h3>
 
                     @foreach($features as $k=>$v)
 
