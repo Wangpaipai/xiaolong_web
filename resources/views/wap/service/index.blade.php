@@ -117,6 +117,5 @@
 </main>
 <!-- /Main -->
 
-
 @include('wap.common.bottom')
 @include('wap.common.footer')
