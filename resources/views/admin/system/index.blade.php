@@ -18,6 +18,7 @@
                                         <img id="cover" src="{{ $data["logo"] ?? "" }}" height="100" />
                                         <button id="imgUpload" class="btn btn-success" type="button"> + 点击上传</button>
                                         <input class="form-control" name="logo" type="hidden" value="{{ $data["logo"] ?? "" }}" required />
+                                        <p class="help-block">建议统一尺寸：143X35。等比例即可</p>
                                     </div>
                                 </div>
 

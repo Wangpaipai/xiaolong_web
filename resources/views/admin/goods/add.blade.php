@@ -25,6 +25,7 @@
                                         <img id="cover" src="" height="100" />
                                         <button id="imgUpload" class="btn btn-success" type="button"> + 点击上传</button>
                                         <input id="coverImg" class="form-control" name="cover" type="hidden" value="" required />
+                                        <p class="help-block">建议统一尺寸：100X100.等比例即可，最小不得小于100X100</p>
                                     </div>
                                 </div>
 
@@ -37,6 +38,7 @@
                                         <img id="banner3" src="" height="100" />
                                         <button id="bannerUpload" class="btn btn-success" type="button"> + 点击上传</button>
                                         <input id="bannerImg" class="form-control" name="banner" type="hidden" value="" required />
+                                        <p class="help-block">建议统一尺寸：1700X950。等比例即可，最小不得低于850X475</p>
                                     </div>
                                 </div>
 
