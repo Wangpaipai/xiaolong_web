@@ -33,6 +33,7 @@
                                         <img id="cover" src="" height="100" />
                                         <button id="imgUpload" class="btn btn-success" type="button"> + 点击上传</button>
                                         <input class="form-control" name="url" type="hidden" value="" required />
+                                        <p class="help-block">建议统一尺寸：1900X510。强制比例，电脑PC端会显示全图，手机端只会显示中间部分，所以建议显眼的东西放中间比较合适</p>
                                     </div>
                                 </div>
 
@@ -42,6 +43,7 @@
                                         <img id="cover1" src="" height="100" />
                                         <button id="imgUpload1" class="btn btn-success" type="button"> + 点击上传</button>
                                         <input class="form-control" name="small_url" type="hidden" value="" required />
+                                        <p class="help-block">建议统一尺寸：350X250。强制比例，背景为透明的PNG最佳，此图只有在电脑PC端才会显示，手机端不会显示</p>
                                     </div>
                                 </div>
 

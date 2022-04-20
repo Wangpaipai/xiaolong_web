@@ -43,6 +43,7 @@
                                         <img id="cover1" src="{{ $data->small_url }}" height="100" />
                                         <button id="imgUpload1" class="btn btn-success" type="button"> + 点击上传</button>
                                         <input class="form-control" name="small_url" type="hidden" value="{{ $data->small_url }}" required />
+                                        <p class="help-block">建议统一尺寸：350X250。强制比例，背景为透明的PNG最佳</p>
                                     </div>
                                 </div>
 
