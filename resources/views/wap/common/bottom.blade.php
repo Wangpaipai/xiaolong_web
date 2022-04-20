@@ -45,25 +45,28 @@
 
                 <h3 class="title">最新 <span class="text-theme">项目</span></h3>
 
-                @for($i = 0; $i < 2; $i++)
+                @if (count($project) > 0)
+                    @for($i = 0; $i < 2; $i++)
 
-                    <!-- Footer Post -->
-                    <div class="media post footerProject" data-href="{{ route("wap.project.detail", ["id" => $project[$i]->id]) }}">
-                        <div class="media-left">
-                            <div class="image">
-                                <img src="{{ $project[$i]->cover }}" alt="">
+                        <!-- Footer Post -->
+                            <div class="media post footerProject" data-href="{{ route("wap.project.detail", ["id" => $project[$i]->id]) }}">
+                                <div class="media-left">
+                                    <div class="image">
+                                        <img src="{{ $project[$i]->cover }}" alt="">
+                                    </div>
+                                </div>
+                                <div class="media-body">
+                                    <p class="text">
+                                        {{ $project[$i]->address }} - {{ $project[$i]->client }}
+                                    </p>
+                                    <a href="javascript:;">{{ $project[$i]->title }}</a>
+                                </div>
                             </div>
-                        </div>
-                        <div class="media-body">
-                            <p class="text">
-                                {{ $project[$i]->address }} - {{ $project[$i]->client }}
-                            </p>
-                            <a href="javascript:;">{{ $project[$i]->title }}</a>
-                        </div>
-                    </div>
-                    <!-- /Footer Post -->
+                            <!-- /Footer Post -->
 
-                @endfor
+                    @endfor
+                @endif
+
 
             </div>
             <!-- /Footer Column -->
