@@ -66,7 +66,7 @@
 
                 <h3 class="title">联系方式</h3>
                 <p>
-                    我们收到您的预约后，将第一时间和您取得联系。
+                    我们收到您的预约后，将在第一时间联系您。
                 </p>
 
                 <ul class="contact-information">
