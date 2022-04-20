@@ -58,7 +58,8 @@
                                 <div class="form-group ">
                                     <label for="cemail" class="control-label col-lg-2">备案号 <span class="required"></span></label>
                                     <div class="col-lg-10">
-                                        <input class="form-control " type="text" name="information" autocomplete="off" value="{{ $data["information"] ?? "" }}" required />
+                                        <input readonly="readonly" class="form-control " type="text" name="information" autocomplete="off" value="{{ $data["information"] ?? "" }}" required />
+                                        <p class="help-block">备案号为工信部备案编号，不可更改</p>
                                     </div>
                                 </div>
                                 <div class="form-group">
