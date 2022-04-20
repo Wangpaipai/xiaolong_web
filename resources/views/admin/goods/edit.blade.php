@@ -26,7 +26,7 @@
                                         <img id="cover" src="{{ $data->cover }}" height="100" />
                                         <button id="imgUpload" class="btn btn-success" type="button"> + 点击上传</button>
                                         <input id="coverImg" class="form-control" name="cover" type="hidden" value="{{ $data->cover }}" required />
-                                        <p class="help-block">建议统一尺寸：100X100.</p>
+                                        <p class="help-block">建议统一尺寸：100X100.等比例即可，最小不得小于100X100</p>
                                     </div>
                                 </div>
 
