@@ -45,6 +45,9 @@
             <p><a href="https://www.gaitubao.com/#set-resize-size" target="_blank" style="color: #00a2d4">在线裁剪图片</a></p>
             <br/>
             <br/>
+            <p><a href="https://tool.lu/index.php/cutout/" target="_blank" style="color: #00a2d4">在线抠图-透明背景</a></p>
+            <br/>
+            <br/>
             <p>
                 <a href="https://www.135editor.com/beautify_editor.html" target="_blank" style="color: #00a2d4">在文本编辑器-135编辑器</a> &nbsp;&nbsp;&nbsp;
                 <a href="http://bj.91join.com/" target="_blank" style="color: #00a2d4">在文本编辑器-91编辑器</a> &nbsp;&nbsp;&nbsp;
