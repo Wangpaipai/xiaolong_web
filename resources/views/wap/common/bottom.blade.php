@@ -45,7 +45,7 @@
 
                 <h3 class="title">最新 <span class="text-theme">项目</span></h3>
 
-                @if (count($project) > 0)
+                @if (count($project) > 1)
                     @for($i = 0; $i < 2; $i++)
 
                         <!-- Footer Post -->
