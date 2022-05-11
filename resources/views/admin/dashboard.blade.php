@@ -45,6 +45,12 @@
             <p><a href="https://www.gaitubao.com/#set-resize-size" target="_blank" style="color: #00a2d4">在线裁剪图片</a></p>
             <br/>
             <br/>
+            <p>
+                <a href="https://www.bejson.com/ui/compress_img/" target="_blank" style="color: #00a2d4">在线压缩图片</a>
+                <span class="help-block">* 图片过大的情况会占用存储空间，并且会影响页面加载效率，上传图片钱建议在此链接压缩一下图片</span>
+            </p>
+            <br/>
+            <br/>
             <p><a href="https://tool.lu/index.php/cutout/" target="_blank" style="color: #00a2d4">在线抠图-透明背景</a></p>
             <br/>
             <br/>
