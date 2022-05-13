@@ -7,7 +7,7 @@
     <meta name="author" content="GeeksLabs">
 {{--    <link rel="shortcut icon" href="{{ asset('static/admin/img/favicon.ico') }}">--}}
 
-    <title>后台管理系统</title>
+    <title>68伞业-后台管理系统</title>
 
     <!-- Bootstrap CSS -->
     <link href="{{ asset('static/admin/css/bootstrap.min.css') }}" rel="stylesheet">

@@ -3,7 +3,7 @@
 <head>
 
     <!-- Page title -->
-    <title>68伞业-{{ $siteName }}</title>
+    <title>{{ $system["name"] }}-{{ $siteName }}</title>
 
     <!-- Meta -->
     <meta charset="utf-8">
