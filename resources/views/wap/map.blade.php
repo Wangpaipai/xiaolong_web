@@ -64,6 +64,11 @@ var opts = {
 };
 var infoWindow = new BMapGL.InfoWindow('地址：成都市双流区彭镇永和村3组16号', opts);
 map.openInfoWindow(infoWindow, point);
+map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+var scaleCtrl = new BMapGL.ScaleControl();  // 添加比例尺控件
+map.addControl(scaleCtrl);
+var zoomCtrl = new BMapGL.ZoomControl();  // 添加缩放控件
+map.addControl(zoomCtrl);
 function getInfoContent() {
   alert(infoWindow.getContent());
 }
